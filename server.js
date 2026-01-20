@@ -6,6 +6,19 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+axios.defaults.timeout = 120000; // 120 seconds
+
+// Add these lines for memory optimization:
+axios.defaults.maxContentLength = 10000000; // 10MB limit
+axios.defaults.maxBodyLength = 10000000;
+
+// Force garbage collection periodically
+if (global.gc) {
+  setInterval(() => {
+    global.gc();
+  }, 30000); // Every 30 seconds
+}
+
 // Set axios timeout to prevent hanging
 axios.defaults.timeout = 120000; // 120 seconds
 
