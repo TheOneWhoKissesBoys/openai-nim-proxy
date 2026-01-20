@@ -4,8 +4,7 @@
   "description": "OpenAI compatible proxy for NVIDIA NIM API",
   "main": "server.js",
   "scripts": {
-  "start": "node --expose-gc --max-old-space-size=450 server.js"
-}
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -15,4 +14,5 @@
   "engines": {
     "node": "18.x"
   }
+}
 }
